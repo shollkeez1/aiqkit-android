@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+android {
+
+    compileSdkVersion global_compileSdkVersion
+    buildToolsVersion global_buildToolsVersion
+    defaultConfig {
+        minSdkVersion global_minSdkVersion
+        targetSdkVersion global_targetSdkVersion
+        versionCode 3
+        versionName "1.0.2"
+        applicationId "tech.aiq.imagematch.example"
+
+        // Enabling multidex support.
+        multiDexEnabled true
+
+        buildConfigField('String', 'AIQ_APP_ID', "\"${AIQ_APP_ID}\"")
+        buildConfigField('String', 'AIQ_APP_SECRET', "\"${AIQ_APP_SECRET}\"")
+        buildConfigField('String', 'AIQ_APP_SERVER', "\"${AIQ_APP_SERVER}\"")
+    }
+    dexOptions {
+        jumboMode true
+    }
+    lintOptions {
+        abortOnError true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', file('proguards')
+
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', file('proguards')
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'LICENSE.txt'
+
+        // Armeabi binaries are never used (all devices will use ArmV7+ versions)
+        exclude 'lib/armeabi/libiconv.so'
+        exclude 'lib/armeabi/libzbarjni.so'
+
+        // We don't release or test for MIPS devices
+        exclude 'lib/mips/libiconv.so'
+        exclude 'lib/mips/libzbarjni.so'
+        exclude 'lib/mips/libRSSupport.so'
+        exclude 'lib/mips/librsjni.so'
+        exclude 'lib/mips64/libiconv.so'
+        exclude 'lib/mips64/libzbarjni.so'
+        exclude 'lib/x86/libiconv.so'
+        exclude 'lib/x86/libzbarjni.so'
+        exclude 'lib/x86_64/libiconv.so'
+        exclude 'lib/x86_64/libzbarjni.so'
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: '../libs')
+    implementation 'org.slf4j:slf4j-android:1.7.25'
+    implementation "com.android.support:appcompat-v7:${global_appCompatVersion}"
+    implementation "tech.aiq:aiqkit:${global_aiqKitVersion}"
+}

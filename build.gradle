@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+//        mavenLocal()
+    }
+
+    configurations.all {
+        // check for updates every build
+        if (project.hasProperty('aiqkitTesting')) {
+            resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+        google()
+    }
+}
+
+subprojects {
+    ext.global_compileSdkVersion = 27
+    ext.global_buildToolsVersion = "27.0.3"
+    ext.global_appCompatVersion = "27.0.0"
+    ext.global_aiqKitVersion = "0.9.4"
+    ext.global_minSdkVersion = 19
+    ext.global_targetSdkVersion = 22
+}
