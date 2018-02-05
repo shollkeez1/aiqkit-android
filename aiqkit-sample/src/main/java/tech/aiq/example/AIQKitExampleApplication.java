@@ -1,14 +1,14 @@
-package tech.aiq.imagematch.example;
+package tech.aiq.example;
 
-import android.support.multidex.MultiDexApplication;
+import android.app.Application;
 import android.text.TextUtils;
 import android.util.Log;
 
 import tech.aiq.kit.AIQKit;
 
-public class Application extends MultiDexApplication {
+public class AIQKitExampleApplication extends Application {
 
-    private static final String TAG = Application.class.getSimpleName();
+    private static final String TAG = AIQKitExampleApplication.class.getSimpleName();
 
 
     @Override
@@ -16,7 +16,7 @@ public class Application extends MultiDexApplication {
         super.onCreate();
 
         Log.d(TAG, "application started");
-        // TODO: remove when all servers are setup
+
         String serverUrl = BuildConfig.AIQ_APP_SERVER;
 
         if (TextUtils.isEmpty(serverUrl)) {

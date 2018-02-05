@@ -38,7 +38,7 @@ In your Application class, initialise the SDK with the App ID and secret you obt
 AIQKit.init(context, "APP-ID", "APP-SECRET", service_url);
 ```
 
-To use the example apps, define the following in your global gradle.properties file:
+To use the example apps, define the following in your gradle.properties file:
 
 ```
 AIQ_APP_ID=enter app id here

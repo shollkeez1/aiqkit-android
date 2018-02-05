@@ -15,3 +15,7 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+#This rule is missing in tech.aiq:aiqkit:0.9.4 proguard file
+#so please add this line in your app's proguard file temporarily
+-dontwarn org.slf4j.impl.*
