@@ -1,0 +1,53 @@
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField('String', 'AIQ_APP_ID', "\"${AIQ_APP_ID}\"")
+        buildConfigField('String', 'AIQ_APP_SECRET', "\"${AIQ_APP_SECRET}\"")
+        buildConfigField('String', 'AIQ_APP_SERVER', "\"${AIQ_APP_SERVER}\"")
+    }
+
+
+    signingConfigs {
+        release {
+            storeFile file(rootDir.getAbsolutePath() + '/keystores/aiqkit.sample.release.keystore.jks')
+            keyAlias 'aiqkitsample'
+            keyPassword 'aiqkit'
+            storePassword 'aiqkit'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        // Armeabi binaries are never used (all devices will use ArmV7+ versions)
+        exclude 'lib/armeabi/libiconv.so'
+        exclude 'lib/armeabi/libzbarjni.so'
+
+        // We don't release or test for MIPS evices
+        exclude 'lib/mips/libiconv.so'
+        exclude 'lib/mips/libzbarjni.so'
+        exclude 'lib/mips/libRSSupport.so'
+        exclude 'lib/mips/librsjni.so'
+        exclude 'lib/mips64/libiconv.so'
+        exclude 'lib/mips64/libzbarjni.so'
+        // enable the following if we do not need to support intel x86 cpu
+//        exclude 'lib/x86/libiconv.so'
+//        exclude 'lib/x86/libzbarjni.so'
+//        exclude 'lib/x86_64/libiconv.so'
+//        exclude 'lib/x86_64/libzbarjni.so'
+    }
+    dependencies {
+        implementation "tech.aiq:aiqkit:0.9.4"
+    }
+}

@@ -1,1 +1,1 @@
-include ':aiqkit-sample'
+include ':aiqkit-sample:bitmap', ':aiqkit-sample:imagefile', ':aiqkit-sample:scanner'

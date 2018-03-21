@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AIQKit_Scanner</string>
+    <string name="act_button">Open Scanner</string>
+    <string name="text">In this example, it presents that how AIQ technology is used to continuousely scan real world and match it with predefined online resource</string>
+</resources>
