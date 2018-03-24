@@ -1,5 +1,5 @@
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
 
     defaultConfig {
         minSdkVersion 19
@@ -29,6 +29,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
     packagingOptions {
         // Armeabi binaries are never used (all devices will use ArmV7+ versions)
         exclude 'lib/armeabi/libiconv.so'
@@ -41,12 +42,12 @@ android {
         exclude 'lib/mips/librsjni.so'
         exclude 'lib/mips64/libiconv.so'
         exclude 'lib/mips64/libzbarjni.so'
-        // enable the following if we do not need to support intel x86 cpu
-//        exclude 'lib/x86/libiconv.so'
-//        exclude 'lib/x86/libzbarjni.so'
-//        exclude 'lib/x86_64/libiconv.so'
-//        exclude 'lib/x86_64/libzbarjni.so'
+        exclude 'lib/x86/libiconv.so'
+        exclude 'lib/x86/libzbarjni.so'
+        exclude 'lib/x86_64/libiconv.so'
+        exclude 'lib/x86_64/libzbarjni.so'
     }
+
     dependencies {
         implementation "tech.aiq:aiqkit:0.9.4"
     }

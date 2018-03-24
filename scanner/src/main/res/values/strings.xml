@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AIQKit Scanner</string>
+    <string name="act_button">Open Scanner</string>
+    <string name="text">Open AIQ Scanner to start search!</string>
+</resources>

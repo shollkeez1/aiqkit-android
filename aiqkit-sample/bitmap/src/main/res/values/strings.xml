@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">AIQKit_Camera</string>
-    <string name="act_button">Take Picture</string>
-    <string name="text">In this example, it demonstrates how to use camera to take a picture and search it from server</string>
-</resources>

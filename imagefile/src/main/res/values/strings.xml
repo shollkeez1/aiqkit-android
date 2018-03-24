@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AIQKit Photo</string>
+    <string name="act_button">Pick Image</string>
+    <string name="pick_image">Pick an image</string>
+    <string name="text">Search an image from Photo Gallery!</string>
+</resources>

@@ -1,13 +1,13 @@
-AIQ image match Android SDK
+AIQ aiqkit Android SDK
 -----------------
 
-The Android SDK gives you access to the powerful AIQ Vision Search platform
-to integrate into your Android app.
+The Android SDK gives you access to the powerful AIQ Vision Search platform to integrate into your Android app.
 
-Installation
-------------
+#### AppID and Ingestion
 
-#### With Gradle
+Before using the sdk, an AppID/Secret pair is required. This can be obtained from the client portal at https://client.aiq.tech/. Note the staging server https://client.staging.aiq.tech/ is for trial users. You also need to ingest some image/pdf/video before you can search for them.
+
+#### Add aiqkit as a Dependency.
 
 add to your build.gradle:
 
@@ -27,31 +27,28 @@ allprojects {
 }
 ```
 
-Initialization
----------------
+#### Initlaize the SDK with AppID and Secret
 
-#### Required
-
-In your Application class, initialise the SDK with the App ID and secret you obtained from developer.aiq.tech
+In your Application class, initialise the SDK with AppID and Secret
  
 ```
-AIQKit.init(context, "APP-ID", "APP-SECRET", service_url);
+AIQKit.init(context, "AppID", "Secret", serviceUrl);
 ```
 
 To use the example apps, define the following in your gradle.properties file:
 
 ```
-AIQ_APP_ID=enter app id here
-AIQ_APP_SECRET=enter app secret here
+AIQ_APP_ID=enter AppID here
+AIQ_APP_SECRET=enter Secret here
 ```
 
-Usage
------
+#### Usage
 
-Please see the sdk document and the sample application for usage.
+Please see the sdk document and the sample apps for usage.
 
-Proguard
--------
-the aiq image sdk support proguard and include a custom proguard file. User just need to enable proguard.
 
-On a side note, the sdk depends on zbar barcode scanner lib, to reduce the final app size, unused *.so file can be removed from the packaging. Please see the build.gradle of the sample app. 
+#### Proguard
+
+The sdk support proguard and include a custom proguard file. User just need to enable proguard.
+
+On a side note, the sdk depends on zbar barcode scanner lib, to reduce the final app size, unused *.so file can be removed from the packaging. Please see the build.gradle of the sample apps. 

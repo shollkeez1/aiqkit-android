@@ -2,4 +2,4 @@
 set -xeuo pipefail
 
 ./gradlew clean
-./gradlew assembleRelease
+./gradlew build
