@@ -47,11 +47,8 @@ public class MainActivity extends Activity {
                     startActivity(myIntent);
                 }
             } catch (Throwable t) {
-                if (AIQKit.isImageNotFoundError(t.getCause())) {
-                    showToast("No match found");
-                } else {
-                    showToast("Error: " + t.getCause().getMessage());
-                }
+                showToast("No match found");
+
             }
         }
     }
