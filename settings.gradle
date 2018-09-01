@@ -1,1 +1,1 @@
-include ':bitmap', ':imagefile', ':scanner'
+include ':camera', ':photo', ':scanner'

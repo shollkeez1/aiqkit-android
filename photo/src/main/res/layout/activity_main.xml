@@ -6,7 +6,7 @@
     android:background="@color/squash"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="tech.aiq.aiqkit.sample.scanner.MainActivity">
+    tools:context="tech.aiq.aiqkit.sample.photo.MainActivity">
 
     <Button
         android:id="@+id/button"
@@ -25,9 +25,9 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
         android:text="@string/text"
         android:textColor="@color/white"
         android:textSize="16sp" />
